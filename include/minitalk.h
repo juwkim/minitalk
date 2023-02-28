@@ -6,7 +6,7 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 08:43:25 by juwkim            #+#    #+#             */
-/*   Updated: 2022/10/31 11:37:29 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/01 01:51:09 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <signal.h>
 # include <limits.h>
 # include <stdlib.h>
+# include <sys/types.h>
 
 typedef struct s_socket
 {

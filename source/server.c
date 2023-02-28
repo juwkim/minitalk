@@ -6,12 +6,12 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 08:42:42 by juwkim            #+#    #+#             */
-/*   Updated: 2022/10/31 11:48:49 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/01 01:58:45 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf/ft_printf.h"
-#include "../includes/minitalk.h"
+#include "libft.h"
+#include "minitalk.h"
 
 t_context	g_prev = {0, 0, 1, 1 << CHAR_BIT};
 

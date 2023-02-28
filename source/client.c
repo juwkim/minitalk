@@ -6,12 +6,12 @@
 /*   By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 08:42:47 by juwkim            #+#    #+#             */
-/*   Updated: 2022/10/31 11:54:19 by juwkim           ###   ########.fr       */
+/*   Updated: 2023/03/01 02:11:48 by juwkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf/ft_printf.h"
-#include "../includes/minitalk.h"
+#include "libft.h"
+#include "minitalk.h"
 
 t_socket	g_ipc;
 
@@ -30,7 +30,7 @@ static void	handler(int signum)
 		{
 			kill(g_ipc.s_pid, signum);
 			ft_printf("client [%d] end...\n", getpid());
-			exit(0);
+			exit(EXIT_SUCCESS);
 		}
 		mask = 1;
 		g_ipc.msg++;
@@ -42,8 +42,8 @@ int	main(int argc, char *argv[])
 {
 	if (argc != 3)
 	{
-		ft_printf("usage: client [server_pid] [message]");
-		return (1);
+		ft_printf("usage: client [server_pid] [message]\n");
+		return (EXIT_FAILURE);
 	}
 	g_ipc.s_pid = ft_atoi(argv[1]);
 	g_ipc.msg = argv[2];
@@ -52,5 +52,5 @@ int	main(int argc, char *argv[])
 	handler(SIGUSR1);
 	while (1)
 		pause();
-	return (0);
+	return (EXIT_SUCCESS);
 }
