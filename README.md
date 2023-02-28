@@ -31,33 +31,41 @@ For more detailed information, look at the [**subject of this project**](https:/
 
 ### Requirements
 
-The function is written in C language and thus needs the c compiler and some standard C libraries to run.
+The library is written in C language and thus needs the **C compiler** and some standard **C libraries** to run.
 
 ### Instructions
 
-**1. Compiling**
+- Pull files ↙️
+```shell
+$ git clone https://github.com/juwkim/minitalk
+```
 
-To compile, go to its path and run:
-
+- To build minitalk ↙️
 ```shell
 $ make
 ```
 
-**2. Cleaning all object files (.o) and executable files (.a)**
+- To clean all object files (.o) and executable files ↙️
 
 ```shell
 $ make fclean
 ```
 
+- To check this repository complies with [norminette](https://github.com/42School/norminette) ↙️
+
+```shell
+$ make norm
+```
+
 ## 📋 Testing
 
-To test the program you just need to launch the "server" and the "client" in different shell tabs with the following:
+To test the program you just need to launch the <server> and the <client> in different shell tabs with the following:
 
 ```shell
 $ ./server
 ```
 
-This will show your PID to make the client work and will stay waiting to receive a message from the "client"
+This will show your PID to make the client work and will stay waiting to receive a message from the <client>
 
 ```shell
 $ ./client <PID> <message>
