@@ -59,16 +59,16 @@ $ make norm
 
 ## 📋 Testing
 
-To test the program you just need to launch the <server> and the <client> in different shell tabs with the following:
+To test the program you just need to launch the \<server\> and the \<client\> in different shell tabs with the following:
 
 ```shell
 $ ./server
 ```
 
-This will show your PID to make the client work and will stay waiting to receive a message from the <client>
+This will show your PID to make the \<client\> work and will stay waiting to receive a message from the \<client\>
 
 ```shell
 $ ./client <PID> <message>
 ```
 
-By launching it, this will show <message> on the server window.
+By launching it, this will show <message> on the \<server\> window.
