@@ -46,13 +46,11 @@ $ make
 ```
 
 - To clean all object files (.o) and executable files ↙️
-
 ```shell
 $ make fclean
 ```
 
 - To check this repository complies with [norminette](https://github.com/42School/norminette) ↙️
-
 ```shell
 $ make norm
 ```
