@@ -6,7 +6,7 @@
 #    By: juwkim <juwkim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/29 08:36:51 by juwkim            #+#    #+#              #
-#    Updated: 2023/03/01 02:08:03 by juwkim           ###   ########.fr        #
+#    Updated: 2023/03/01 21:52:25 by juwkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@
 
 CC                  :=	cc
 CFLAGS              :=	-Wall -Wextra -Werror -march=native -O2 -pipe
-CPPFLAGS            =	-I include -I $(libft)/include
-LDFLAGS             =	-L $(libft)
+CPPFLAGS            =	-I include -I $(LIBFT)/include
+LDFLAGS             =	-L $(LIBFT)
 LDLIBS              :=	-l ft
 
 ifdef DEBUG
@@ -28,7 +28,7 @@ endif
 #   Define the libraries                                                       #
 # ---------------------------------------------------------------------------- #
 
-libft               := libft
+LIBFT               := libft
 
 # ---------------------------------------------------------------------------- #
 #   Define the directories                                                     #
@@ -67,7 +67,7 @@ CLIENT              :=	client
 # ---------------------------------------------------------------------------- #
 
 all:
-	@$(MAKE) -C $(libft)
+	@$(MAKE) -C $(LIBFT)
 	@$(MAKE) -j $(SERVER)
 	@$(MAKE) -j $(CLIENT)
 
@@ -91,7 +91,7 @@ clean:
 	@printf "$(BLUE)[MINITALK] obj. files$(DEF_COLOR)$(GREEN)	=> Cleaned!\n$(DEF_COLOR)"
 
 fclean: clean
-	@$(RM) $(NAME)
+	@$(RM) $(SERVER) $(CLIENT)
 	@printf "$(CYAN)[MINITALK] exe. files$(DEF_COLOR)$(GREEN)	=> Cleaned!\n$(DEF_COLOR)"
 
 re: fclean
@@ -102,7 +102,8 @@ dir_guard:
 	@mkdir -p $(OBJ_DIR)
 
 norm:
-	@(norminette | grep Error) || (printf "$(GREEN)[MINITALK] Norminette Success\n$(DEF_COLOR)")
+	@$(MAKE) -C $(LIBFT) norm
+	@(norminette include source | grep Error) || (printf "$(GREEN)[MINITALK] Norminette Success\n$(DEF_COLOR)")
 
 debug:
 	@$(MAKE) fclean
